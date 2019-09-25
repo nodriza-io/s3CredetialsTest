@@ -10,7 +10,7 @@ if (!project) {
 	throw Error(`Error, cannot find project '${name}' in manifest, please "cp manifest.json.tmpl manifest.json" and replace credentials.`)
 }
 
-const credentials = {accessKeyId: project.accessKeyId, secretAccessKey: project.secretAccessKey}
+const credentials = {accessKeyId: project.accessKeyId, secretAccessKey: project.secretAccessKey, region: project.region}
 const s3 = new AWS.S3(new AWS.Config(credentials))
 const key = 'nodriza.txt'
 
